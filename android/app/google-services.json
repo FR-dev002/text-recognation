@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "986244426754",
+    "firebase_url": "https://textrecognationapp-bc914.firebaseio.com",
+    "project_id": "textrecognationapp-bc914",
+    "storage_bucket": "textrecognationapp-bc914.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986244426754:android:1b389f2a725bde1447cb1b",
+        "android_client_info": {
+          "package_name": "com.textrecognationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986244426754-hjeicb5l9nauq56os747kp1aot5ksjtm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm2w-hrTlhaF_mJhbbF5K5T9bLvV_-QU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986244426754-hjeicb5l9nauq56os747kp1aot5ksjtm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,16 +7,15 @@ import com.facebook.react.ReactApplication;
 import com.reactnativecommunity.cameraroll.CameraRollPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
+import androidx.multidex.MultiDexApplication;
 import com.facebook.react.ReactInstanceManager;
-import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends MultiDexApplication implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
