@@ -5,6 +5,7 @@ const CameraHook = () => {
   const [uri, setUri] = useState('');
   const [position, setPosition] = useState(true);
   const [flash, setFlash] = useState(true);
+  const [nilai, setNilai] = useState(0);
 
   useEffect(() => {
     setUri('');
@@ -61,15 +62,21 @@ const CameraHook = () => {
     return status === 'granted';
   };
 
+  const plus = () => {
+    setNilai((prev) => prev + 1);
+  };
+
   /**
    * @description return object dati Custom Hooks
    */
   return {
     takePicture,
+    plus,
     handleFlash,
     handlePosition,
     handleCancel,
     uri,
+    nilai,
     position,
     flash,
   };
