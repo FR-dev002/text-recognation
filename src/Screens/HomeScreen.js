@@ -36,6 +36,19 @@ const HomeScreen = ({navigation}) => {
         }}>
         Barcode Reader
       </Text>
+      <Text
+        style={{
+          backgroundColor: 'yellow',
+          height: 30,
+          borderRadius: 10,
+          padding: 5,
+          color: 'white'
+        }}
+        onPress={() => {
+          navigation.navigate('LocalNotification');
+        }}>
+        Local Notification
+      </Text>
     </View>
   );
 };

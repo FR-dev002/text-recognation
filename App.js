@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import TextRecognationScreen from './src/Screens/TextRecognationScreen';
 import BarcodeReaderScreen from './src/Screens/BarcodeReaderScreen';
+import LocalNotificationScreen from './src/Screens/LocalNotificationScreen';
 import HomeScreen from './src/Screens/HomeScreen';
 
 const rootStack = createStackNavigator();
@@ -20,6 +21,11 @@ const App = () => {
         <rootStack.Screen
           name="BarcodeReader"
           component={BarcodeReaderScreen}
+        />
+
+        <rootStack.Screen
+          name="LocalNotification"
+          component={LocalNotificationScreen}
         />
       </rootStack.Navigator>
     </NavigationContainer>
