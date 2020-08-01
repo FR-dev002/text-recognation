@@ -2,20 +2,21 @@ import PushNotification from 'react-native-push-notification';
 import {Platform} from 'react-native';
 
 class NotificationManagerClass {
-  configure = (onRegister, onNotification, onOpenNotification) => {
+  configure = (onRegister, onNotification, onOpenNotification, senderId) => {
     PushNotification.configure({
       onRegister: function (token) {
-        // console.log('[NotificationManagerClass] [onRegister] TOKEN : ', token);
-        onRegister(token);
+        onRegister(token.token);
+        console.log(
+          '[NotificationManagerClass] [onRegister] TOKEN : ',
+          token.token,
+        );
       },
 
       onNotification: function (notification) {
         console.log(
-          // '[NotificationManagerClass] [onNotification] NOTIFICATION : ',
+          '[NotificationManagerClass] [onNotification] NOTIFICATION : ',
           notification,
-        );
-
-        notification.userInteraction = true;
+          );
 
         if (notification.userInteraction) {
           onOpenNotification(notification);
@@ -23,8 +24,15 @@ class NotificationManagerClass {
           onNotification(notification);
         }
 
+        if (Platform.OS === "android") {
+          notification.userInteraction = true;
+        }
+
         notification.finish('backgroundFetchResultNoData');
       },
+
+      // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)
+      senderID: senderId,
     });
   };
 

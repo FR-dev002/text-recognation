@@ -5,16 +5,22 @@ const LocalNotificationHook = () => {
   const [localNotification, setLocalNofication] = useState(
     () => notificationManager,
   );
+  const senderId = '986244426754';
 
   useEffect(() => {
-    localNotification.configure(onRegister, onNotification, onOpenNotification);
+    localNotification.configure(
+      onRegister,
+      onNotification,
+      onOpenNotification,
+      senderId,
+    );
   }, [localNotification]);
 
   const onPressSendNotification = () => {
     const options = {
       soundName: 'default',
       playSound: true,
-      vibrate: true
+      vibrate: true,
     };
     localNotification.showNotification(
       1,
@@ -34,7 +40,8 @@ const LocalNotificationHook = () => {
   };
 
   const onOpenNotification = (notify) => {
-    alert('open Notification');
+    console.log(notify.title);
+    // alert('open Notification'); 
   };
 
   const onPressCancelNotification = () => {
